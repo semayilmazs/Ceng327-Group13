@@ -8,7 +8,7 @@ import numpy as np
 
 print("Current Working Directory:", os.getcwd())
 # Change the dataset for your computer
-dataset_path = os.path.join(r"C:\Users\LENOVO\OneDrive\Masaüstü\güz24-25\scientific\ScientificProject\dataset_for_project", "*.png")
+dataset_path = os.path.join("dataset_for_project", "*.png")
 image_paths = glob.glob(dataset_path)
 print(f"Number of images found: {len(image_paths)}")
 
