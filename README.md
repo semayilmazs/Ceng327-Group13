@@ -14,7 +14,7 @@ This project demonstrates different thresholding techniques for image segmentati
 # Different Implementations on The Same Topic
   
    One of the implementations uses OpenCv built in thresholding functions but the other one contains totally customized thresholding methods.
-# To run this Project
+# The following steps walk through getting the application running. 
 
 
 1. **Clone the repository**
