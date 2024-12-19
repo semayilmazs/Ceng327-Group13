@@ -32,4 +32,6 @@ This project demonstrates different thresholding techniques for image segmentati
 
 
 4. **Run the script**
+
+
    python thresholding.py 
