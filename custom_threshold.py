@@ -91,25 +91,27 @@ for img_path in image_paths:
     plt.imshow(gray, cmap="gray")
     plt.title("Grayscale")
     plt.axis("off")
-
+    plt.text(0.5, -0.1, f"Time: {grayscale_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
+    
     plt.subplot(1, 5, 3)
     plt.imshow(global_thresh, cmap="gray")
     plt.title("Global Thresholding")
     plt.axis("off")
-
+    plt.text(0.5, -0.1, f"Time: {global_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
+     
     plt.subplot(1, 5, 4)
     plt.imshow(otsu_thresh, cmap="gray")
     plt.title("Otsu's Thresholding")
     plt.axis("off")
-
+    plt.text(0.5, -0.1, f"Time: {otsu_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
+    
     plt.subplot(1, 5, 5)
     plt.imshow(adaptive_thresh, cmap="gray")
     plt.title("Adaptive Thresholding")
     plt.axis("off")
+    plt.text(0.5, -0.1, f"Time: {adaptive_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
 
-    plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}\n"
-                 f"Gr. Time: {grayscale_time:.4f}s | "
-                 f"Glob. Time: {global_time:.4f}s | "
-                 f"Otsu. Time: {otsu_time:.4f}s | "
-                 f"Adap. Time: {adaptive_time:.4f}s")
+    plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
+    
+    plt.tight_layout()
     plt.show()
