@@ -11,3 +11,5 @@ This project demonstrates different thresholding techniques for image segmentati
 3. **Adaptive Thresholding**  
    Computes thresholds locally for different regions of the image, suitable for varying lighting conditions.
 
+Clone the repository
+git clone https://github.com/semayilmazs/Ceng327-Group13.git
