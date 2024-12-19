@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import cv2
 import numpy as np
+import time
 
 def global_threshold(image, threshold):
     return np.where(image > threshold, 255, 0).astype(np.uint8)
@@ -58,12 +59,26 @@ print(f"Number of images found: {len(image_paths)}")
 
 for img_path in image_paths:
     image = imageio.imread(img_path)
+    start_time = time.time()
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    grayscale_time=time.time() - start_time
+    print(f"Grayscale Conversion Time: {grayscale_time:.4f} seconds")
     
+    start_time = time.time()
     global_thresh = global_threshold(gray, 127)
+    global_time = time.time() - start_time
+    print(f"Global Thresholding Time: {global_time:.4f} seconds")
+    
+    start_time = time.time()
     otsu_thresh = otsu_threshold(gray)
+    otsu_time = time.time() - start_time
+    print(f"Otsu's Thresholding Time Time: {otsu_time:.4f} seconds")
+    
+    start_time = time.time()
     adaptive_thresh = adaptive_threshold(gray, 33, 2)
-
+    adaptive_time = time.time() - start_time
+    print(f"Adaptive Thresholding Time: {adaptive_time:.4f} seconds")
+    
     # Plot results
     plt.figure(figsize=(12, 6))
 
@@ -92,5 +107,9 @@ for img_path in image_paths:
     plt.title("Adaptive Thresholding")
     plt.axis("off")
 
-    plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
+    plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}\n"
+                 f"Gr. Time: {grayscale_time:.4f}s | "
+                 f"Glob. Time: {global_time:.4f}s | "
+                 f"Otsu. Time: {otsu_time:.4f}s | "
+                 f"Adap. Time: {adaptive_time:.4f}s")
     plt.show()
