@@ -34,7 +34,7 @@ else:
         # Hybrid Thresholding
         hybrid_thresh = cv2.addWeighted(global_thresh, 0.5, adaptive_thresh, 0.5, 0)
 
-        plt.figure(figsize=(12, 6), facecolor='#F0FFF0')
+        plt.figure(figsize=(10, 6), facecolor='#F0FFF0')
 
         plt.subplot(1, 6, 1)
         plt.imshow(image, cmap="gray")
