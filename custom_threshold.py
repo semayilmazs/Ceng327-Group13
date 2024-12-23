@@ -57,6 +57,10 @@ dataset_path = os.path.join("dataset_for_project", "*.jpg")
 image_paths = glob.glob(dataset_path)
 print(f"Number of images found: {len(image_paths)}")
 
+print(f"Number of images found: {len(image_paths)}")
+output_folder = "processed_images"
+os.makedirs(output_folder, exist_ok=True)
+
 for img_path in image_paths:
     image = imageio.imread(img_path)
     start_time = time.time()
@@ -110,7 +114,10 @@ for img_path in image_paths:
     plt.title("Adaptive Thresholding")
     plt.axis("off")
     plt.text(0.5, -0.1, f"Time: {adaptive_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
-
+    # Save the plot to the output folder
+    output_path = os.path.join(output_folder, f"threshold_{os.path.basename(img_path)}.png")
+    plt.savefig(output_path, bbox_inches="tight")
+    print(f"Saved: {output_path}")
     plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
     
     plt.tight_layout()
