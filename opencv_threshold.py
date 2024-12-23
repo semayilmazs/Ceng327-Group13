@@ -31,33 +31,41 @@ else:
         adaptive_thresh = cv2.adaptiveThreshold(
             gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 33, 2
         )
+        # Hybrid Thresholding
+        hybrid_thresh = cv2.addWeighted(global_thresh, 0.5, adaptive_thresh, 0.5, 0)
 
         plt.figure(figsize=(12, 6), facecolor='#F0FFF0')
 
-        plt.subplot(1, 5, 1)
+        plt.subplot(1, 6, 1)
         plt.imshow(image, cmap="gray")
         plt.title("Original")
         plt.axis("off")
 
-        plt.subplot(1, 5, 2)
+        plt.subplot(1, 6, 2)
         plt.imshow(gray, cmap="gray")
         plt.title("Grayscale Image")
         plt.axis("off")
 
-        plt.subplot(1, 5, 3)
+        plt.subplot(1, 6, 3)
         plt.imshow(global_thresh, cmap="gray")
         plt.title("Global Thresholding")
         plt.axis("off")
 
-        plt.subplot(1, 5, 4)
+        plt.subplot(1, 6, 4)
         plt.imshow(otsu_thresh, cmap="gray")
         plt.title("Otsu's Thresholding")
         plt.axis("off")
 
-        plt.subplot(1, 5, 5)
+        plt.subplot(1, 6, 5)
         plt.imshow(adaptive_thresh, cmap="gray")
         plt.title("Adaptive Thresholding")
+        plt.axis("off")
+        
+        plt.subplot(1, 6, 6)
+        plt.imshow( hybrid_thresh, cmap="gray")
+        plt.title("Hybrid Thresholding")
         plt.axis("off")
 
         plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
         plt.show()
+
