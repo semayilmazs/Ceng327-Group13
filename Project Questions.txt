@@ -19,7 +19,7 @@ B-) Clustering Thresholding requires the user to specify the number of clusters,
 C-) Otsu's Thresholding works by grouping pixels into multiple clusters, while Clustering Thresholding calculates a single global threshold.
 D-) There is no difference. 
 
-Which of the following treshold method that calculates the optimal threshold value by maximizing between class variation?
+Which of the following threshold method that calculates the optimal threshold value by maximizing between class variation?
 A-) Global thresholding 
 B-) Otsu's thresholding True
 C-) Adaptive thresholding   
