@@ -8,7 +8,7 @@ import numpy as np
 
 
 # Change the dataset for your computer
-dataset_path = os.path.join("dataset_for_project", "*.png")
+dataset_path = os.path.join("dataset_for_project", "*.jpg")
 image_paths = glob.glob(dataset_path)
 print(f"Number of images found: {len(image_paths)}")
 
