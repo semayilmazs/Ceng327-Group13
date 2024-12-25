@@ -1,42 +1,30 @@
-# Ceng327-Group13
+# Image Thresholding Project
 
-This project demonstrates different thresholding techniques for image segmentation using Python and OpenCV.
+This project compares different thresholding methods in image processing using Python. Two scripts are included:
 
-1. **Global Thresholding**  
-   Applies a fixed threshold value to segment the image.
+1. **`custom_threshold.py`**: Implements custom thresholding and clustering-based techniques.
+2. **`opencv_threshold.py`**: Uses OpenCV's built-in thresholding methods.
 
-2. **Otsu's Thresholding**  
-   Automatically determines the optimal threshold by minimizing intra-class variance.
+---
 
-3. **Adaptive Thresholding**  
-   Computes thresholds locally for different regions of the image, suitable for varying lighting conditions.
+## Methods
+S
+### 1. Global Thresholding
+- Fixed intensity threshold to separate foreground and background.
 
-# Different Implementations on The Same Topic
-  
-   One of the implementations uses OpenCv built in thresholding functions but the other one contains totally customized thresholding methods.
-# The following steps walk through getting the application running. 
+### 2. Otsu's Thresholding
+- Automatically calculates the best threshold value.
 
+### 3. Adaptive Thresholding
+- Computes a local threshold for each pixel using its surrounding region.
 
-1. **Clone the repository**
+### 4. Clustering Thresholding
+- Groups pixel intensities into clusters and thresholds based on the brightest cluster.
 
+---
 
+## How to Run
 
-
-         git clone https://github.com/semayilmazs/Ceng327-Group13.git
-
-3. **Put the images in the correct folder**
-
-
-   Place your images in the dataset_for_project folder. Ensure the images are in supported formats like .png or .jpg.
-
-4. **Required Libraries**
-
-
-   Make sure the following libraries are installed
- 
-       pip install matplotlib imageio opencv-python-headless numpy
-
-
-5. **Run the script**
-   python opencv_thresholding.py
-   python custom_thresholding.py
+### Prerequisites
+Install the required Python libraries:
+pip install numpy matplotlib scikit-learn opencv-python
