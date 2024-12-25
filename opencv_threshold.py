@@ -8,7 +8,7 @@ import numpy as np
 
 
 # Change the dataset for your computer
-dataset_path = os.path.join("dataset_for_project", "*.png")
+dataset_path = os.path.join("dataset_for_project", "*.jpg")
 image_paths = glob.glob(dataset_path)
 print(f"Number of images found: {len(image_paths)}")
 
@@ -34,38 +34,44 @@ else:
         # Hybrid Thresholding
         hybrid_thresh = cv2.addWeighted(global_thresh, 0.5, adaptive_thresh, 0.5, 0)
 
-        plt.figure(figsize=(10, 6), facecolor='#F0FFF0')
+        # Clustering Thresholding
+        num_labels, labels = cv2.connectedComponents(global_thresh)
 
-        plt.subplot(1, 6, 1)
-        plt.imshow(image, cmap="gray")
+        cluster_image = np.zeros_like(gray)
+        for label in range(1, num_labels):
+            cluster_image[labels == label] = 255
+
+        plt.figure(figsize=(15, 8), facecolor='#F0FFF0')
+
+        plt.subplot(2, 3, 1)
+        plt.imshow(image)
         plt.title("Original")
         plt.axis("off")
 
-        plt.subplot(1, 6, 2)
+        plt.subplot(2, 3, 2)
         plt.imshow(gray, cmap="gray")
         plt.title("Grayscale Image")
         plt.axis("off")
 
-        plt.subplot(1, 6, 3)
+        plt.subplot(2, 3, 3)
         plt.imshow(global_thresh, cmap="gray")
         plt.title("Global Thresholding")
         plt.axis("off")
 
-        plt.subplot(1, 6, 4)
+        plt.subplot(2, 3, 4)
         plt.imshow(otsu_thresh, cmap="gray")
         plt.title("Otsu's Thresholding")
         plt.axis("off")
 
-        plt.subplot(1, 6, 5)
+        plt.subplot(2, 3, 5)
         plt.imshow(adaptive_thresh, cmap="gray")
         plt.title("Adaptive Thresholding")
         plt.axis("off")
-        
-        plt.subplot(1, 6, 6)
-        plt.imshow( hybrid_thresh, cmap="gray")
-        plt.title("Hybrid Thresholding")
+
+        plt.subplot(2, 3, 6)
+        plt.imshow(cluster_image, cmap="gray")
+        plt.title("Clustering Threshold")
         plt.axis("off")
 
         plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
         plt.show()
-
