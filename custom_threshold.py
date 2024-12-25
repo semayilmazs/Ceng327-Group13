@@ -56,12 +56,14 @@ def adaptive_threshold(image, block_size, C):
 def hybrid_threshold(global_thresh, adaptive_thresh):
     return (0.5 * global_thresh + 0.5 * adaptive_thresh).astype(np.uint8)
 
-def clustering_threshold(image, n_clusters=2):
-    pixels = image.reshape(-1, 1)
-    kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(pixels)
-    clustered = kmeans.labels_.reshape(image.shape)
-    thresholded = (clustered == clustered.max()).astype(np.uint8) * 255
-    return thresholded
+def clustering_threshold(image, n_clusters=4s):
+    pixel_values = image.flatten().astype(np.float32).reshape(-1, 1)
+    kmeans = KMeans(n_clusters=n_clusters, random_state=0, n_init=10)
+    labels = kmeans.fit_predict(pixel_values)
+    cluster_centers = kmeans.cluster_centers_
+    sorted_indices = np.argsort(cluster_centers.flatten())
+    binary_image = np.where(labels == sorted_indices[-1], 255, 0)
+    return binary_image.reshape(image.shape).astype(np.uint8)
 
 # Main code
 dataset_path = os.path.join("dataset_for_project", "*.jpg")
