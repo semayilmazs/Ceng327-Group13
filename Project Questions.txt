@@ -24,3 +24,14 @@ A-) Global thresholding
 B-) Otsu's thresholding True
 C-) Adaptive thresholding   
 D-)  Clustering thresholding
+
+
+In which of the following situations are threshold methods commonly used?
+A-) Tumor detection in MRI scans
+B-) Environmental monitoring through satellite imagery analysis
+C-) Object detection in autonomous vehicles
+D-) All of the above 
+
+
+
+
