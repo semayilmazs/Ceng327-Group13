@@ -23,7 +23,7 @@ Each member contributed to different aspects of the project:
 
 **Fatmanur Köse**
 
-  -Enhanced the scripts by adding timing functionalities for performance analysis. Added time information to the images
+  -Enhanced the scripts by adding timing functionalities for performance analysis. Added time information to the images. Enhanced the plotting for the results.
   -Created questions for understanding of the project. 
 
 
