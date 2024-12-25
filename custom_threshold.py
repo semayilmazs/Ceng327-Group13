@@ -115,7 +115,7 @@ for img_path in image_paths:
     plt.axis("off")
     plt.text(0.5, -0.1, f"Time: {adaptive_time:.4f}s", ha='center', va='top', transform=plt.gca().transAxes)
     # Save the plot to the output folder
-    output_path = os.path.join(output_folder, f"threshold_{os.path.basename(img_path)}.png")
+    output_path = os.path.join(output_folder, f"threshold_{os.path.basename(img_path)}.jpg")
     plt.savefig(output_path, bbox_inches="tight")
     print(f"Saved: {output_path}")
     plt.suptitle(f"Thresholding Results for {os.path.basename(img_path)}")
