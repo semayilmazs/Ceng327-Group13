@@ -18,3 +18,9 @@ A-) Otsu's Thresholding works on grayscale images, while Clustering Thresholding
 B-) Clustering Thresholding requires the user to specify the number of clusters, whereas Otsu's Thresholding automatically determines the optimal threshold for binary segmentation. True
 C-) Otsu's Thresholding works by grouping pixels into multiple clusters, while Clustering Thresholding calculates a single global threshold.
 D-) There is no difference. 
+
+Which of the following tresholding methods calculates the optimal treshold value by maximizing between class variation?
+A-) Global thresholding 
+B-) Otsu's thresholding True
+C-) Adaptive thresholding   
+D-)  Clustering thresholding
