@@ -33,7 +33,7 @@ Each member contributed to different aspects of the project:
 
 
 
-**Muhammed Talha Şatır**
+**Muhammet Talha Şatır**
 
   -Contributed additional questions
 
