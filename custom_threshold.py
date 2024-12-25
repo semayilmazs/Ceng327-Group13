@@ -57,7 +57,6 @@ dataset_path = os.path.join("dataset_for_project", "*.jpg")
 image_paths = glob.glob(dataset_path)
 print(f"Number of images found: {len(image_paths)}")
 
-print(f"Number of images found: {len(image_paths)}")
 output_folder = "processed_images"
 os.makedirs(output_folder, exist_ok=True)
 
