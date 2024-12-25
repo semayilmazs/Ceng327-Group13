@@ -10,21 +10,34 @@ This project compares different thresholding methods in image processing using P
 
 
 ## Contributions
+
 - This project was completed as part of a collaborative effort by our student group. 
-Each member contributed to different aspects of the project: 
+Each member contributed to different aspects of the project:
+
+
 **İsmail Atalay**
 -Authored the project report in LaTeX and designed the presentation slides.
+
+
 
 **Fatmanur Köse**
 -Enhanced the scripts by adding timing functionalities for performance analysis.
 -Created questions for understanding of the project. 
+
+
 **Sema Nur Yılmaz**
 -Developed the main functionality in custom_threshold.py and opencv_threshold.py, implementing global, Otsu's, and adaptive thresholding methods. Gathered the data.
 
+
+
 **Muhammed Talha Şatır** 
 -Contributed additional questions
+
+
 **Adnan Arda Simsar**
 -Added clustering functionality to the scripts, enhancing the thresholding techniques with KMeans and connected components.
+
+
 ## Methods
 
 ### 1. Global Thresholding
